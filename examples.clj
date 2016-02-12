@@ -19,3 +19,15 @@
 ;;die positiv sind. Programmieren Sie zwei Lösungen: einmal mit und einmal ohne die Funktion filter.
 (defn pos [x, list] (filter #(> % x) list))
 (pos 0 '(-1 0 1 3))
+
+;; Aufgabe 3
+;; Programmieren Sie eine Funktion Last, die das letzte Element einer Liste zurück gibt.
+;; Beispiel: (Last '(1 2 3 4)) → 4
+
+;; count elements of a list
+(count '(1 2 3 4 5 6))
+;; show nth element
+(nth '(1 2 3 4 5 6) 0)
+(defn last[liste] (nth liste (- (count liste) 1)))
+
+(last '(1 2 3))
