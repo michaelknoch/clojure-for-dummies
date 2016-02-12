@@ -31,3 +31,14 @@
 (defn last[liste] (nth liste (- (count liste) 1)))
 
 (last '(1 2 3))
+
+;; Aufgabe 4
+;; Programmieren Sie eine Funktion brackets, welche als Parameter eine Liste erhält und die
+;; jedes Element durch eine Liste mit diesem Element ersetzt.
+;; Beispiel: (brackets '(1 2 3 5)) → ((1) (2) (3) (5)) 
+
+;; create list by number
+(list 4)
+(defn brackets [liste] (map #(list %) liste))
+(brackets '(1 2 3))
+
