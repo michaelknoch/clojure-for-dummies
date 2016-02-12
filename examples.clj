@@ -20,6 +20,7 @@
 (defn pos [x, list] (filter #(> % x) list))
 (pos 0 '(-1 0 1 3))
 
+
 ;; Aufgabe 3
 ;; Programmieren Sie eine Funktion Last, die das letzte Element einer Liste zurück gibt.
 ;; Beispiel: (Last '(1 2 3 4)) → 4
@@ -32,6 +33,7 @@
 
 (last '(1 2 3))
 
+
 ;; Aufgabe 4
 ;; Programmieren Sie eine Funktion brackets, welche als Parameter eine Liste erhält und die
 ;; jedes Element durch eine Liste mit diesem Element ersetzt.
@@ -41,4 +43,30 @@
 (list 4)
 (defn brackets [liste] (map #(list %) liste))
 (brackets '(1 2 3))
+
+
+;; Aufgabe 5
+;;Programmieren Sie eine rekursive Funktion, die die Reihenfolge einer Liste umkehrt:
+;;Beispiel: (rev '(1 2 3 4)) → (4 3 2 1)
+;;Anmerkung: eine einfache Lösung verwendet die Funktion concat zum Konkatenieren
+;;zweier Listen
+
+(defn umdrehen[neueliste alteliste] 
+  (if (empty? alteliste) neueliste
+  (concat (umdrehen neueliste (rest alteliste)) (list(first alteliste)))))
+
+(umdrehen () '(5 4 3 2 1))
+
+
+;; Aufgabe 6
+;;Addieren Sie alle Zahlen bis 1000, die durch 3 oder 5 teilbar sind. In Clojure können Sie die
+;;Funktion (rem num div) verwenden, die den Rest bei der Division von num durch div berechnet
+
+(apply + (filter #(or (= 0 (mod % 3))
+                      (= 0 (mod % 5)))
+                    (range 1 1001)))
+
+
+
+
 
